@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dragonwilds Resource Planner</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Dragonwilds Resource Planner</h1>
+      <p class="sub">Pick an item and a quantity — get the full raw material shopping list.</p>
+    </header>
+
+    <main class="wrap">
+      <section class="picker">
+        <div class="filters">
+          <input id="itemSearch" placeholder="Search for an item (e.g. Steel Sword)..." autocomplete="off" />
+          <select id="categoryFilter"><option value="">All Categories</option></select>
+          <select id="stationFilter"><option value="">All Stations</option></select>
+          <select id="powerFilter"><option value="">All Power Levels</option></select>
+          <input id="qty" type="number" min="1" value="1" title="Quantity to add" />
+        </div>
+        <div class="results-meta">
+          <span id="resultsCount" class="muted-note"></span>
+          <span class="muted-note">Click an item to add it to your plan list</span>
+        </div>
+        <div id="itemResults" class="item-results"></div>
+      </section>
+
+      <section class="plan-list-section">
+        <div class="plan-list-header">
+          <h2>Plan List</h2>
+          <button id="clearListBtn" class="ghost-btn">Clear all</button>
+        </div>
+        <ul id="planList" class="plan-list"></ul>
+      </section>
+
+      <div id="itemMeta" class="item-meta"></div>
+
+      <div class="output-grid">
+        <section>
+          <h2>Combined Shopping List</h2>
+          <ul id="totalsList" class="totals-list"></ul>
+        </section>
+        <section>
+          <h2>Recipe Breakdown</h2>
+          <div id="treeView" class="tree-view"></div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
